@@ -6,4 +6,5 @@ struct Circle
 	float speed = 1000;
 	float momentumX = -3;
 	float momentumY = 5;
+	int score = 0;
 };

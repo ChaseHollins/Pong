@@ -119,6 +119,7 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Drawing.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Interactions.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="sfwdraw.h" />

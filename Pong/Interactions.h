@@ -2,57 +2,61 @@
 #include <iostream>
 #include "Paddle.h"
 #include "Circle.h"
+#include <cmath>
 
 
 int collisionPaddleBorder(const Paddle Player)
 {
-	if (Player.positionX + 75 < 795 && Player.positionX - 75 > 5)
+	if (Player.positionX + 50 < 795 && Player.positionX - 50 > 5)
 		return 1;
-	else if (Player.positionX + 75 >= 795)
+	else if (Player.positionX + 50 >= 795)
 		return 2;
-	else if (Player.positionX - 75 <= 5)
+	else if (Player.positionX - 50 <= 5)
 		return 3;
 }
 
 
 void collisionBallBorder(Circle &Ball)
 {
-	if (Ball.positionX >= 790 || Ball.positionX <= 10)
+	if (Ball.positionX >= 790)
 	{
-		Ball.momentumX = Ball.momentumX*(-1);
+		Ball.momentumX = fabsf(Ball.momentumX) * (-1);
 		Ball.momentumY = Ball.momentumY;
 	}
 
-	if (Ball.positionY >= 590 || Ball.positionY <= 10)
+	if (Ball.positionX <= 10)
+	{
+		Ball.momentumX = fabsf(Ball.momentumX);
+		Ball.momentumY = Ball.momentumY;
+	}
+
+	if (Ball.positionY >= 590)
 	{
 		Ball.momentumX = Ball.momentumX;
-		Ball.momentumY = Ball.momentumY * (-1);
+		Ball.momentumY = fabsf(Ball.momentumY) * (-1);
+		Ball.score++;
+	}
+
+	if (Ball.positionY <= 10)
+	{
+		Ball.momentumX = Ball.momentumX;
+		Ball.momentumY = fabsf(Ball.momentumY);
 	}
 }
 
 
 void collisionBallPaddle(Circle &Ball, const Paddle Player)
 {
-	float multiplier = fabsf(Player.positionX - Ball.positionX);
-	multiplier = multiplier / 30.0;
-
-	Ball.momentumX = Ball.momentumX * multiplier;
-	Ball.momentumY = Ball.momentumY * (-1);
+	float holder = atan2f(Ball.positionX - Player.positionX, Ball.positionY - Player.positionY);
+	Ball.momentumX = (cos(holder));
+	Ball.momentumY = (sin(holder));
 }
 
 
 void overlapBallPaddle(Circle &Ball, const Paddle Player)
 {
-	bool xOverlap = false;
-	bool yOverlap = false;
-	if (Ball.positionY + 35 >= Player.positionY && Ball.positionY - 5 <= Player.positionY)
-		yOverlap = true;
-	if (Ball.positionX - 5 < Player.positionX + 75 && Ball.positionX + 5 > Player.positionX - 75)
-		xOverlap = true;
-
-	if (xOverlap == true && yOverlap == true)
+	if (pow((Ball.positionX - Player.positionX), 2) + pow((Ball.positionY - Player.positionY), 2) <= 2700)
 	{
 		collisionBallPaddle(Ball, Player);
-		Ball.positionY = 110;
 	}
 }

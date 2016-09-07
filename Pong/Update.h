@@ -48,14 +48,26 @@ void updatePaddle(Paddle &Player)
 			Player.positionX += 8;
 		break;
 	case 2:
-		Player.positionX = 720;
+		Player.positionX = 745;
 		if (sfw::getKey(KEY_LEFT))
 			Player.positionX -= 8;
 		break;
 	case 3:
-		Player.positionX = 80;
+		Player.positionX = 55;
 		if (sfw::getKey(KEY_RIGHT))
 			Player.positionX += 8;
 		break;
+	}
+}
+
+void score(Circle &Ball)
+{
+	int i = 0;
+
+	i++;
+	if (i >= 5 && Ball.speed < 3000)
+	{
+		i = 0;
+		Ball.speed++;
 	}
 }
