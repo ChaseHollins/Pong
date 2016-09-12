@@ -53,6 +53,9 @@ NOTE: YOU MUST CALL initContext for any of the functions to work!
 #define BLUE	 0x0000ffff
 #define NONE     0x00000000
 
+//#define colour[8] = {0xff1a1aff,0xff3333ff,0xff4d4dff,0xff6666ff,0xff8080ff,0xff9999ff,0xffb3b3ff,0xffccccff, 0xffe6e6ff}
+
+
 #define PI 3.14159265359
 
 namespace sfw
