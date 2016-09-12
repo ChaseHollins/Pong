@@ -1,14 +1,17 @@
 #pragma once
 #include "sfwdraw.h"
-//#include <iostream>
 #include "Paddle.h"
 #include "Circle.h"
 
 
 void drawBall(const Circle Ball)
 {
-	//sfw::drawLine(Ball.positionX, Ball.positionY, Ball.positionX2, Ball.positionY2);
-	//sfw::drawLine(Ball.positionX2, Ball.positionY2, Ball.positionX3, Ball.positionY3);
+	sfw::drawLine(Ball.positionX, Ball.positionY, Ball.stringPosX[1], Ball.stringPosY[1]);
+
+	for (int i = 9; i > 0; --i)
+	{
+		sfw::drawLine(Ball.stringPosX[i], Ball.stringPosY[i], Ball.stringPosX[i - 1], Ball.stringPosY[i - 1]);
+	}
 }
 
 

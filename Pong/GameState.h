@@ -10,6 +10,9 @@ struct GameState
 {
 	Circle Ball;
 	Paddle Player;
+
+
+
 };
 
 GameState createGameState()

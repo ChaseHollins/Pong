@@ -8,11 +8,6 @@ struct Circle
 	float momentumY = 5;
 	int score = 0;
 
-	//float positionX2 = 400;
-	//float positionY2 = 300;
-	//float positionX3 = 400;
-	//float positionY3 = 300;
-
-	float stringPosX[5];
-	float stringPosY[5];
+	float stringPosX[10] = { 400 };
+	float stringPosY[10] = { 300 };
 };

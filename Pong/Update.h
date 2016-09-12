@@ -33,10 +33,14 @@ void updateBall(Circle & Ball)
 {
 	stabilizeSpeed(Ball);
 
-	//Ball.positionX3 = Ball.positionX2;
-	//Ball.positionY3 = Ball.positionY2;
-	//Ball.positionX2 = Ball.positionX;
-	//Ball.positionY2 = Ball.positionY;
+	for (int i = 9; i > 0; --i)
+	{
+		Ball.stringPosX[i] = Ball.stringPosX[i - 1];
+		Ball.stringPosY[i] = Ball.stringPosY[i - 1];
+	}
+
+	Ball.stringPosX[0] = Ball.positionX;
+	Ball.stringPosY[0] = Ball.positionY;
 
 	Ball.positionX += Ball.momentumX;
 	Ball.positionY += Ball.momentumY;
