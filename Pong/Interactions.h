@@ -48,8 +48,8 @@ void collisionBallBorder(Circle &Ball)
 void collisionBallPaddle(Circle &Ball, const Paddle Player)
 {
 	float holder = atan2f(Ball.positionX - Player.positionX, Ball.positionY - Player.positionY);
-	Ball.momentumX = (cos(holder));
-	Ball.momentumY = (sin(holder));
+	Ball.momentumX = (sin(holder));
+	Ball.momentumY = (cos(holder));
 }
 
 

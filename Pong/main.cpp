@@ -1,7 +1,4 @@
 #include "sfwdraw.h"
-#include "Interactions.h"
-#include "Drawing.h"
-#include "Update.h"
 #include "GameState.h"
 
 

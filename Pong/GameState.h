@@ -16,7 +16,6 @@ GameState createGameState()
 {
 	GameState retval;
 
-
 	return retval;
 };
 

@@ -7,7 +7,8 @@
 
 void drawBall(const Circle Ball)
 {
-	sfw::drawCircle(Ball.positionX, Ball.positionY, 5);
+	//sfw::drawLine(Ball.positionX, Ball.positionY, Ball.positionX2, Ball.positionY2);
+	//sfw::drawLine(Ball.positionX2, Ball.positionY2, Ball.positionX3, Ball.positionY3);
 }
 
 

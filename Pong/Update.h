@@ -32,6 +32,12 @@ void stabilizeSpeed(Circle &Ball)
 void updateBall(Circle & Ball)
 {
 	stabilizeSpeed(Ball);
+
+	//Ball.positionX3 = Ball.positionX2;
+	//Ball.positionY3 = Ball.positionY2;
+	//Ball.positionX2 = Ball.positionX;
+	//Ball.positionY2 = Ball.positionY;
+
 	Ball.positionX += Ball.momentumX;
 	Ball.positionY += Ball.momentumY;
 }
