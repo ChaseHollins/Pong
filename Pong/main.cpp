@@ -16,4 +16,5 @@ int main()
 	}
 
 	sfw::termContext();
+	//system("pause");
 }
