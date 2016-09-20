@@ -35,12 +35,17 @@ void collisionBallBorder(Circle &Ball)
 		Ball.momentumX = Ball.momentumX;
 		Ball.momentumY = fabsf(Ball.momentumY) * (-1);
 		Ball.score++;
+		if (Ball.speed < 3000)
+		{
+			Ball.speed = Ball.speed + 100;
+		}
 	}
 
 	if (Ball.positionY <= 10)
 	{
 		Ball.momentumX = Ball.momentumX;
 		Ball.momentumY = fabsf(Ball.momentumY);
+		Ball.lost = true;
 	}
 }
 

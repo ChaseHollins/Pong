@@ -114,12 +114,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="start.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Drawing.h" />
+    <ClInclude Include="EndGame.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Interactions.h" />
     <ClInclude Include="Paddle.h" />

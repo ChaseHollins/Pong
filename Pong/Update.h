@@ -10,15 +10,26 @@ void stabilizeSpeed(Circle &Ball)
 {
 	if (fabsf(Ball.momentumX / Ball.momentumY) > 2)
 		Ball.momentumX = 2.0 * Ball.momentumY;
-
+/*
 	if (Ball.momentumY > 9)
 	{
-		int rnd;
+		float rnd;
 		srand((unsigned)time(0));
-		rnd = ((rand() % 21) - 10)/5;
+		rnd = ((rand() % 21) - 10) / 5;
+
+		float rnd2;
+		srand((unsigned)time(0));
+		rnd2 = (rand() % 2);
+
+		if (rnd2 == 1)
+		{
+			//rnd = rnd * -1;
+		}
 
 		Ball.momentumX = rnd;
+		//Ball.momentumY = 10 - rnd;
 	}
+	*/
 
 	float total = fabsf(Ball.momentumX) + fabsf(Ball.momentumY);
 	float difference = (Ball.speed/100) / total;
@@ -31,8 +42,6 @@ void stabilizeSpeed(Circle &Ball)
 
 void updateBall(Circle & Ball)
 {
-	stabilizeSpeed(Ball);
-
 	for (int i = 9; i > 0; --i)
 	{
 		Ball.stringPosX[i] = Ball.stringPosX[i - 1];
@@ -44,6 +53,8 @@ void updateBall(Circle & Ball)
 
 	Ball.positionX += Ball.momentumX;
 	Ball.positionY += Ball.momentumY;
+
+	stabilizeSpeed(Ball);
 }
 
 
