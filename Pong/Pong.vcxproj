@@ -114,17 +114,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="start.cpp" />
+    <ClCompile Include="EndState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SplashState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Drawing.h" />
-    <ClInclude Include="EndGame.h" />
+    <ClInclude Include="EndState.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Interactions.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="sfwdraw.h" />
+    <ClInclude Include="SplashState.h" />
+    <ClInclude Include="stateconst.h" />
     <ClInclude Include="Update.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
